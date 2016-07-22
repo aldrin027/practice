@@ -43,6 +43,9 @@
             max-width: 100%;
             position: absolute;
         }
+
+
+
     </style>
 @stop
 @section('content')
@@ -55,7 +58,11 @@
             </div>
         </table>
     </div>
-
+    <div  class="chatToggle" >
+        {!! Form::textarea('message', null, ['class' => 'msgarea', 'id' => 'msgarea', 'style' => 'display:none;', 'disabled']) !!}
+        {!! Form::text('text', null, ['class' => 'textInput', 'id' => 'txtInput', 'style' => 'display:none']) !!}
+        <button style="width: 250px;" id="chatTab">Chat tab <span class="glyphicon glyphicon-menu-up" id="arrow"></span></button>
+    </div>
 @stop
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -75,7 +82,7 @@
     </div>
 </div>
 
-<button id="click">Click me!</button>
+{{--<button id="click">Click me!</button>--}}
 @section('js')
     <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
     <script>
@@ -204,49 +211,49 @@
                     }
                 };
 
-        function triggerMe(firstMessage, secondMessage, callback) {
-            var mess;
-            mess = 'This is the first message: ' + firstMessage + '\n';
-            mess += 'This is the second message: ' + secondMessage + '\n';
-
-            if(callback && typeof callback === 'function')
-            {
-                mess += 'This is the function callback: ' + callback();
-            }
-
-            return alert(mess);
-        }
-
-
-        var OOP = OOP || {
-                    fn: {
-                        triggerHim: function(a,b,c) {
-
-                            if(typeof c === 'function') {
-                                c = c();
-                            }else if(c === ''){
-                                c = null;
-                            }
-                            return console.log(a + ' ' + b + ' ' + c);
-                        }
-                    }
-                };
+//        function triggerMe(firstMessage, secondMessage, callback) {
+//            var mess;
+//            mess = 'This is the first message: ' + firstMessage + '\n';
+//            mess += 'This is the second message: ' + secondMessage + '\n';
+//
+//            if(callback && typeof callback === 'function')
+//            {
+//                mess += 'This is the function callback: ' + callback();
+//            }
+//
+//            return alert(mess);
+//        }
+//
+//
+//        var OOP = OOP || {
+//                    fn: {
+//                        triggerHim: function(a,b,c) {
+//
+//                            if(typeof c === 'function') {
+//                                c = c();
+//                            }else if(c === ''){
+//                                c = null;
+//                            }
+//                            return console.log(a + ' ' + b + ' ' + c);
+//                        }
+//                    }
+//                };
 
 
         $(function(){
-
+//Start of test
 //            $('#click').on('click', function(){
 //                triggerMe('Hello', 'World', function(){
 //                    return 'ALDRIN!!!';
 //                });
 //            });
 
-            $('#click').on('click', function(){
-                OOP.fn.triggerHim('a','b', function(){
-                    return 'c';
-                });
-            });
-
+//            $('#click').on('click', function(){
+//                OOP.fn.triggerHim('a','b', function(){
+//                    return 'c';
+//                });
+//            });
+//End test
 
             var url = '{!! Request::url() !!}';
             var curr = window.location.href;
@@ -309,10 +316,12 @@
 
                         if(row.editing)
                         {
-                            return '<div style="width: 50%;"><button class="btn btn-primary btn-xs btn-responsive glyphicon glyphicon-floppy-saved" style="max-width: 100%;" onclick="Bots.func.save()" >Save</button> &nbsp; &nbsp; <button class="btn btn-primary btn-xs glyphicon glyphicon-remove-sign" style="max-width: 100%;" onclick="Bots.func.cancel('+ row.bot_id +')">Cancel</button></div>';
+                            return '<div style="width: 100%; text-align: center;"><button class="btn btn-primary btn-xs btn-responsive glyphicon glyphicon-floppy-saved" onclick="Bots.func.save()" style="min-width: 30%;">Save</button> &nbsp; &nbsp;' +
+                                   '<button style="width: 30%;" class="btn btn-primary btn-xs glyphicon glyphicon-remove-sign" onclick="Bots.func.cancel('+ row.bot_id +')">Cancel</button></div>';
                         }else{
 
-                            return '<div style="width: 50%;"> <button class="btn btn-primary btn-xs btn-responsive glyphicon glyphicon-edit" style="max-width: 100%;" onclick="Bots.func.edit(' + row.bot_id + ')" >Edit</button> &nbsp; &nbsp; <button class="btn btn-primary btn-xs glyphicon glyphicon-remove-sign" style="max-width: 100%;" onclick="Bots.func.delete('+ row.bot_id +')">Delete</button></div>';
+                            return '<div style="width: 100%; text-align: center;"><button class="btn btn-primary btn-xs btn-responsive glyphicon glyphicon-edit" style="min-width: 30%;" onclick="Bots.func.edit(' + row.bot_id + ')">Edit</button> &nbsp; &nbsp; ' +
+                                   '<button style="width: 30%;" class="btn btn-primary btn-xs glyphicon glyphicon-remove-sign" onclick="Bots.func.delete('+ row.bot_id +')">Delete</button></div>';
                         }
 
                     }}

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="app">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>@yield('title')</title>
     {!! HTML::style('assets/bootstrap/css/bootstrap.css') !!}
     {!! HTML::style('assets/easyui/themes/default/easyui.css') !!}
@@ -10,7 +12,7 @@
     {!! HTML::script('assets/easyui/jquery.min.js') !!}
     {!! HTML::script('assets/easyui/jquery.easyui.min.js') !!}
 
-
+</head>
     {{--{!! HTML::script('assets/easyui/jquery.easyui.mobile.js') !!}--}}
     <style>
         .container {
@@ -30,6 +32,7 @@
     @yield('content')
     </div>
     @include('navbar.footer')
+
 
 
 

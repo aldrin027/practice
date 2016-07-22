@@ -44,17 +44,46 @@
 
         }
 
-        .container {
+        /*body {*/
+            /*position: relative;*/
             /*height: 979px;*/
-            height: 500vh;
-            width: 100%;
+            /*height: 500vh;*/
+            /*width: 100%;*/
+            /*background: url("http://i264.photobucket.com/albums/ii198/mad_cow2605/DOTA2_169.jpg");*/
+            /*background-repeat: no-repeat;*/
+            /*background-attachment: fixed;*/
+            /*background-size: 100%;*/
+            /*background-size: cover;*/
+            /*background-position: center center;*/
+            /*margin: 0;*/
+            /*overflow-y: hidden;*/
+            /*overflow-x: hidden;*/
+        /*}*/
+
+        body {
+
             background: url("http://i264.photobucket.com/albums/ii198/mad_cow2605/DOTA2_169.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100%;
-            margin: 0;
-            overflow-y: hidden;
+            /*overflow-y: hidden;*/
             overflow-x: hidden;
+        }
+
+        .container {
+            /*height: 979px;*/
+            height: 500vh;
+            width: 100%;
+            /*background: url("http://i264.photobucket.com/albums/ii198/mad_cow2605/DOTA2_169.jpg");*/
+            /*background-repeat: no-repeat;*/
+            /*background-attachment: fixed;*/
+            /*background-size: 100%;*/
+            /*background-position: center;*/
+            /*min-width: 100px;*/
+            /*margin: 0;*/
+            /*overflow-y: hidden;*/
+            /*overflow-x: hidden;*/
+
         }
         
        nav a.logo {
@@ -119,6 +148,23 @@
         .dataContent1Img {
             padding: 35px;
         }
+
+        .animateThis {
+            transition: all 0.5s ease;
+            animation: moveLetters 2s;
+        }
+
+        @-webkit-keyframes moveLetters {
+            0% {
+                transform: scale(3);
+
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
     </style>
 
 
@@ -139,6 +185,11 @@
 
     <div class="container">
         <div class="row">
+            <div class="intro" style="position: relative; /**background: gray;**/ height: 820px; width: 80%; margin: 0 auto; top: 120px;">
+                <div id="header" style="position: absolute; margin: 0 auto; width: 100%; top: 100px; text-align: center; padding: 20px;">
+                    <h1 id="welcome" class="animateThis" style="font-size: 80px; font-family: Book Antiqua; color: blueviolet;">Welcome to my page...</h1>
+                </div>
+            </div>
             <div class="dataContent col-md-12">
 
                 <div class="content1 col-md-6" style="height: 100%; width: 800px;">
@@ -186,7 +237,7 @@
                         </a>
                     </div>
 
-                    <div class="carouselDesc" style="height: 38%; width: 100%; background: #000000;">
+                    <div class="carouselDesc" style="height: 41%; width: 100%; background: #000000;">
                         <div style="">
 
                         </div>
@@ -288,6 +339,14 @@
 
 
         $(function() {
+
+            $(window).on('load', function(){
+//                $('#header').fadeIn('slow', function(){
+////                    $(this).queue(function(){
+//                        $(this).addClass('animateThis');
+////                    });
+//                });
+            });
 
             $('#overlay').on('click', function(){
                 $('.overlayItems').fadeToggle("slow");

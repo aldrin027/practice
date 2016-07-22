@@ -25,6 +25,7 @@
     }
 </style>
 @section('content')
+    @include('navbar.menus')
     <div class="row">
 
         <div class="myTable" style="height: 80%; position: absolute; width: 85%; left: 5%; top: 125px;">

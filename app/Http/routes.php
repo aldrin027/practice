@@ -14,6 +14,7 @@
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@show']);
 Route::post('post-login', ['as' => 'logIn', 'uses' => 'HomeController@logIn']);
 
+
 Route::group(['middleware' => 'auth', 'prefix' => 'user'],function(){
 
     Route::get('dashboards', ['as' => 'dashboards', 'uses' => 'HomeController@showDashboard']);
@@ -23,6 +24,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user'],function(){
     Route::get('roulette', ['as' => 'roulette', 'uses' => 'HomeController@getRoulette']);
     Route::get('slotMachine', ['as' => 'slot', 'uses' => 'HomeController@getSlotMachine']);
     Route::get('crud', ['as' => 'crud', 'uses' => 'HomeController@getCrud']);
+    Route::get('responsiveTest', ['as' => 'responsive', 'uses' => 'HomeController@responsive']);
 //    Route::get('botData', ['as' => 'bots', 'uses' => 'HomeController@getBotData']);
 });
 

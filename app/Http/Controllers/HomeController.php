@@ -14,6 +14,7 @@ use Auth;
 use App\User;
 use App\Bot;
 use Illuminate\Contracts\Auth\Guard;
+use Hash;
 class HomeController extends Controller {
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
@@ -83,5 +84,10 @@ class HomeController extends Controller {
     public function getCrud()
     {
         return view('crud');
+    }
+
+    public function responsive()
+    {
+        return view('responsive');
     }
 }
