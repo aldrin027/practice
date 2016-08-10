@@ -34,7 +34,6 @@
         background-attachment: fixed;
         background-size: cover;
         /*background-position: top center;*/
-
     }
     
     .try1 {
