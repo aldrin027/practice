@@ -47,9 +47,14 @@ class HomeController extends Controller {
 
     public function showDashboard(Request $request)
     {
-//        $input = $request->input();
-//        echo '<pre>';
-//        print_r($input);
+//        $arr = [
+//            0 => ['id' => 1, 'sht' => 'L', 'tm' => 'tttt'],
+//            1 => ['id' => 7, 'tm' => 'xyz'],
+//            2 => ['id' => 12, 'hand' => 'R'],
+//            3 => ['id' => 20]
+//        ];
+//
+//        print_r($arr);
 //        exit;
         $data = Bot::all();
         return view('dashboards.home', compact('data'));
@@ -58,7 +63,7 @@ class HomeController extends Controller {
     public function logout()
     {
         $this->auth->logout();
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function getMyShop()

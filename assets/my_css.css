@@ -1,0 +1,288 @@
+.header {
+    position: relative;
+    height: 100vh;
+}
+
+.header .video-content #logo {
+    color: white;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    margin-top: -5%;
+    z-index: 1;
+    /*display: none;*/
+    font-size: 100%;
+    clear: both;
+}
+
+
+.header .header-navbar {
+    z-index: 1;
+    position: fixed;
+    text-align: center;
+
+}
+
+.header .header-navbar ul {
+    list-style-type: none;
+}
+
+.header .header-navbar ul li {
+    display: inline-block;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-color: cornsilk;
+}
+
+.main-content{
+    height: 2400px;
+    width: 100%;
+}
+
+.sub-content {
+    height: 42%;
+
+    width: 100%;
+    /*margin-top: 5%;*/
+}
+.footer{
+    height: 65px;
+    width: 100%;
+}
+
+.sub-content .imgOverlay {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background:#000000;
+    opacity: 1;
+}
+
+.thumbnail .centerAll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    z-index: 100000;
+}
+
+.header .video-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /*background-image: url('../../public/assets/space.jpg');*/
+    /*image-rendering: pixelated;*/
+    /*animation: space 30s linear infinite;*/
+}
+
+.main-content .sub-content{
+    position: relative;
+    /*left: 50%;*/
+    /*right: 50%;*/
+
+    /*right: 0;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    /*opacity: 1;*/
+}
+
+.test {
+    position: relative;
+}
+
+.thumbnail img {
+    /*-webkit-transition: margin 1s ease;*/
+    transition: margin 1s ease;
+    margin-left: 0;
+}
+
+.thumbnail img:hover, .hoverImg {
+    /*margin-left: -100px;*/
+    /*-webkit-animation: cust_fadeIn ease;*/ /**  This is for chrome */
+    /*-moz-animation: cust_fadeIn ease;*/ /**  This is for mozilla */
+    /*animation: cust_fadeIn 1s forwards;*/ /**  This is for opera */
+    -webkit-filter: blur(1px);
+}
+
+.thumbnail img:hover + .blue {
+    margin-left: calc(60% - 200px);
+    opacity: 0.5;
+}
+
+.thumbnail .blue:hover, .hoverCaption {
+    opacity: 0.5;
+    margin-left: 60%;
+}
+
+
+
+.thumbnail .blue {
+    background-color: black;
+    opacity: 0.5;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    margin-left: 140%;
+    -webkit-transition: margin 1s ease;
+    transition: margin 1s ease;
+    /*-webkit-transform: skewX(-20deg);*/
+    transform: skewX(-50deg);
+    color: #ffffff;
+}
+
+.sub-content .imgOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    top: 0;
+    opacity: 0.5;
+}
+
+.thumbnail .blue .caption_text {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    transform: skewX(50deg);
+}
+
+.thumbnail .enlargeImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+
+.thumbnail .caption_title {
+    opacity: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.thumbnail  .custom_tooltip {
+    width: 100%;
+    background-color: #000000;
+    position: absolute;
+}
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    right: 0;
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+}
+
+
+.fadeUp {
+    -webkit-animation: fadeUp 1s forwards;
+}
+
+.fadeDown {
+    -webkit-animation: fadeDown 1s forwards;
+}
+
+@-webkit-keyframes cust_fadeIn {
+    /*from {  opacity: 1; }*/
+    /*to {  opacity: 0.5; }*/
+    from { -webkit-filter: none; }
+    to { -webkit-filter:  brightness(0.50);  }
+}
+
+
+@-webkit-keyframes fadeUp {
+    from {  bottom: 0; opacity: 0;}
+    to { bottom: 25px; opacity: 0.8; }
+}
+
+@-webkit-keyframes fadeDown {
+    from {  top: -90px; opacity: 0; color: #ffffff;}
+    to { top: 0; opacity: 1; color: #ffffff;}
+}
+
+@-webkit-keyframes space{
+    0% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1.1); }
+}
+@-moz-keyframes space{
+    0% { -moz-transform: scale(1); }
+    100% { -moz-transform: scale(1.1); }
+}
+@-o-keyframes space{
+    0% { -o-transform: scale(1); }
+    100% { -o-transform: scale(1.1); }
+}
+@keyframes space{
+    0% {  transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+
+/* Shine */
+.hover14 figure {
+    position: relative;
+}
+.hover14 figure::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+.hover14 figure:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s;
+}
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
